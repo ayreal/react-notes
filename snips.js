@@ -275,3 +275,52 @@ handleChange(e) {
       return { favorites };
     });
   };
+
+  // turnary to handle rendering different things based on some condition
+
+  toggleSearch = () => {
+    if (this.state.searchStatus === "search") {
+      return (
+        <div>
+          <input
+            type="text"
+            placeholder="Search Here"
+            value={this.state.searchText}
+            onChange={this.handleSearchInput}
+          />
+          <input
+            type="text"
+            placeholder="Limit"
+            value={this.state.limit}
+            onChange={this.handleLimitInput}
+          />
+        </div>
+      );
+    } else {
+      return (
+        <input
+          type="text"
+          placeholder="Limit"
+          value={this.state.limit}
+          onChange={this.handleLimitInput}
+        />
+      );
+    }
+  };
+
+  render() {
+    return (
+      <div>
+        <button name="search" onClick={this.handleClick}>
+          Search
+        </button>
+        <button name="trending" onClick={this.handleClick}>
+          Trending
+        </button>
+
+        <br />
+
+        {this.toggleSearch()}
+      </div>
+    );
+  }
