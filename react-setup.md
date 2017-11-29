@@ -14,7 +14,7 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 
-ReactDOM.render(<App title="My App Title" number={1}/>,
+ReactDOM.render(<App i/>,
 // renders virtual DOM, on actual DOM
 document.getElementById("root"));
 // this is the element in the actual DOM in index.html where your virtual DOM will be rendered
